@@ -19,9 +19,15 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
-        cache: gradle
-
+    - name: setup gradle
+      uses: gradle/actions/setup-gradle@v4
+      with:
+        gradle-version: "8.9"
+    - run: gradle build --dry-run # just test build configuration
+    - run: echo "The release-candidate version was ${{ steps.setup-gradle.outputs.gradle-version }}"
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name: Build with Gradle
       run: ./gradlew build
+    - name: Test with Gradle
+      run: ./gradlew test
