@@ -1,0 +1,2 @@
+- name: Run Linters and Test
+  run: ./gradlew check

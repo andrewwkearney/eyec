@@ -1,0 +1,15 @@
+- name: Fetch Sources
+  uses: actions/checkout@v2
+  with:
+    # Number of commits to fetch. 0 indicates all history for all branches and tags.
+    fetch-depth: 0
+
+- name: Setup JDK
+  uses: actions/setup-java@v2
+  with:
+    distribution: 'zulu'
+    java-version: '17'
+
+- name: Setup Android SDK
+  uses: android-actions/setup-android@v2
+

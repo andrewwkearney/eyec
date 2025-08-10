@@ -1,0 +1,5 @@
+- name: Run Ktlint
+  run: ./gradlew/ ktlintStagingDebugCheck
+
+- name: Run Unit Tests
+  run: ./gradlew testStagingDebugUnitTest

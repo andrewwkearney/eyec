@@ -1,0 +1,14 @@
+# Workflow name
+name: Release app
+
+# When it will be triggered
+on:
+  push:
+    branches:
+      - main
+
+# Where it will run
+jobs:
+  build:
+  runs-on: ubuntu-latest
+
